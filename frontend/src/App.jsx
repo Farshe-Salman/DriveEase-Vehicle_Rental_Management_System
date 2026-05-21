@@ -12,6 +12,25 @@ import Profile from "./pages/dashboard/Profile";
 
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 
+import AdminLayout from "./layouts/AdminLayout";
+
+import AdminDashboard from "./pages/admin/AdminDashboard";
+
+import ManageVehicles from "./pages/admin/ManageVehicles";
+
+import ManageCustomers from "./pages/admin/ManageCustomers";
+
+import ManageReservations from "./pages/admin/ManageReservations";
+
+import ManageBookings from "./pages/admin/ManageBookings";
+
+import ManageEmployees from "./pages/admin/ManageEmployees";
+
+import ManageBranches from "./pages/admin/ManageBranches";
+
+import ManageMaintenance from "./pages/admin/ManageMaintenance";
+
+import ManagePayments from "./pages/admin/ManagePayments";
 
 function App() {
 
@@ -49,6 +68,58 @@ function App() {
         path="/dashboard"
         element={<CustomerDashboard />}
       />
+
+      <Route
+        path="/admin"
+        element={<AdminLayout />}
+      >
+
+        <Route
+          path="dashboard"
+          element={<AdminDashboard />}
+        />
+
+        <Route
+          path="vehicles"
+          element={<ManageVehicles />}
+        />
+
+        <Route
+          path="customers"
+          element={<ManageCustomers />}
+        />
+
+        <Route
+          path="reservations"
+          element={<ManageReservations />}
+        />
+
+        <Route
+          path="bookings"
+          element={<ManageBookings />}
+        />
+
+        <Route
+          path="employees"
+          element={<ManageEmployees />}
+        />
+
+        <Route
+          path="branches"
+          element={<ManageBranches />}
+        />
+
+        <Route
+          path="maintenance"
+          element={<ManageMaintenance />}
+        />
+
+        <Route
+          path="payments"
+          element={<ManagePayments />}
+        />
+
+      </Route>
 
     </Routes>
 

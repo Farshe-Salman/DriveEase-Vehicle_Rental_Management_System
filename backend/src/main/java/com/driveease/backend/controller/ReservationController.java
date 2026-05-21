@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 
 @RequestMapping("/api/reservation")
@@ -20,12 +19,9 @@ import java.util.List;
 @CrossOrigin("*")
 
 public class ReservationController {
-
-
     @Autowired
 
     private ReservationService reservationService;
-
 
     @PostMapping("/reserve")
 
@@ -59,6 +55,18 @@ public class ReservationController {
 
                 reservationService
                         .getCustomerReservations(id)
+
+        );
+
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Reservation>>
+    getAllReservations() {
+
+        return ResponseEntity.ok(
+
+                reservationService.getAllReservations()
 
         );
 

@@ -52,30 +52,18 @@ const Auth = ({ onLoginSuccess }) => {
         // ADMIN LOGIN
 
         if (
-
-            isLogin &&
             formData.email === "admin@gmail.com" &&
             formData.password === "admin"
-
         ) {
 
             localStorage.setItem(
-
-                "user",
-
-                JSON.stringify({
-
-                    name: "Admin",
-                    role: "ADMIN"
-
-                })
-
+                "role",
+                "admin"
             );
 
-            navigate("/");
+            navigate("/admin/dashboard");
 
             return;
-
         }
 
 

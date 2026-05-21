@@ -1,22 +1,13 @@
 package com.driveease.backend.controller;
-
 import com.driveease.backend.entity.Rental;
-
 import com.driveease.backend.service.RentalService;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-
 @RestController
-
 @RequestMapping("/api/rental")
-
 @CrossOrigin("*")
 
 public class RentalController {
@@ -54,6 +45,18 @@ public class RentalController {
         return ResponseEntity.ok(
 
                 rentalService.getCustomerRentals(id)
+
+        );
+
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Rental>>
+    getAllRentals() {
+
+        return ResponseEntity.ok(
+
+                rentalService.getAllRentals()
 
         );
 

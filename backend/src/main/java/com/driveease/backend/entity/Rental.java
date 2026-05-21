@@ -1,4 +1,5 @@
 package com.driveease.backend.entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -71,6 +72,11 @@ public class Rental {
 
     @JoinColumn(name = "C_ID")
 
+    @JsonIgnoreProperties({
+            "rentals",
+            "reservations"
+    })
+
     private Customer customer;
 
 
@@ -79,6 +85,11 @@ public class Rental {
     @ManyToOne
 
     @JoinColumn(name = "V_ID")
+
+    @JsonIgnoreProperties({
+            "rentals",
+            "reservations"
+    })
 
     private Vehicle vehicle;
 

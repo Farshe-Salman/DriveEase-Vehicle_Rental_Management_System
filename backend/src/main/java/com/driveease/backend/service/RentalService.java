@@ -51,4 +51,10 @@ public class RentalService {
 
     }
 
+    public List<Rental> getAllRentals() {
+
+        return rentalRepository.findAll();
+
+    }
+
 }
